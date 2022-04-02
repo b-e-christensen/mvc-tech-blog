@@ -1,0 +1,17 @@
+.post-container {
+    margin: 8px;
+    border: darkblue 2px solid;
+    border-top: none;
+}
+
+.post-title {
+    height: fit-content;
+    margin: 15px;
+    font-size: 24px;
+    border: 2px #333 solid;
+}
+
+.post-content {
+    margin: 8px;
+    font-size: 16px;
+}
