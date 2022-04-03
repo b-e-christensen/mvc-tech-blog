@@ -1,0 +1,17 @@
+[
+    {
+        "title": "'Best Post Ever'",
+        "content": "I told you guys, this is the best post ever. Dont believe me? Too bad, so sad. I told you guys, this is the best post ever. Dont believe me? Too bad, so sad. I told you guys, this is the best post ever. Dont believe me? Too bad, so sad.",
+        "user_id": 1
+    },
+    {
+        "title": "'Pretty good Post Ever'",
+        "content": "'This is just a pretty good post. I swear. I just pretty good'",
+        "user_id": 2
+    },
+    {
+        "title": "'Janine's day out'",
+        "content": "'This has nothing to do with tech, but rather is just about how great my day was today. I hada  great day!'",
+        "user_id": 3
+    }
+]

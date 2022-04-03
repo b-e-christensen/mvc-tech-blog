@@ -16,6 +16,13 @@ Comment.init(
             allowNull: false
         },
         // need relation id's here (posts and users.)
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
+        }
     },    
         {
             sequelize,
