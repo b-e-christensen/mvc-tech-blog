@@ -16,6 +16,13 @@ Comment.init(
             allowNull: false
         },
         // need relation id's here (posts and users.)
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         post_id: {
             type: DataTypes.INTEGER,
             references: {
