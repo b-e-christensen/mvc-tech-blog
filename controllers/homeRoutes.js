@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-      const postData = await Comment.findAll({
-        include: [{ model: User }]
+      const postData = await Post.findAll({
+        include: [{ model: User }, { model: Comment}]
       })
 
       // const commentData = await Comment.findAll({
@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
       // })
 
       const posts = postData.map((post) => post.get({ plain: true }));
-      console.log(posts)
+      
+      res.status(200).json(postData[0])
 
       // const comments = commentData.map((comment) => comment.get({ plain: true }));
       // console.log(comments)
