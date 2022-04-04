@@ -8,17 +8,9 @@ router.get('/', async (req, res) => {
         include: [{ model: User }, { model: Comment}]
       })
 
-      // const commentData = await Comment.findAll({
-      //   include: [{ Model: Post }]
-      // })
-
       const posts = postData.map((post) => post.get({ plain: true }));
       
-      // res.status(200).json(postData)
-
-      // const comments = commentData.map((comment) => comment.get({ plain: true }));
-      // console.log(comments)
-      console.log(posts[0].comments[0].content);
+      // console.log(posts);
       res.render('dashboard', {
         posts
       })
@@ -35,7 +27,7 @@ router.get('/', async (req, res) => {
         include: [{ model: User }, { model: Comment}]
       })
 
-      res.status(200).json(postData[0])
+      res.status(200).json(postData)
 
     } catch (err) {
       console.log(err)
