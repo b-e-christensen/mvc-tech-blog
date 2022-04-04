@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="./public/css/jass.css">
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <a href="/">Post Central</a> 
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+<!-- 
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+
+        <a href="/login">login</a> -->
+
+      </nav>
+    </header>
+    <main class="container container-fluid mt-5">
+        <div class="post-container">
+            <div id="post-title" class="post-title display-flex justify-center"><h5><strong>Post Title</strong> posted by User Name</h5></div>
+            <div id="post-content" class="post-body col-12"><p>This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! </p></div>
+            <div id="comments"> <h5>Comments:</h5>
+              <div class="comment"><p>I think this post stinks!</p></div>
+              <div class="comment"><p>I think this post stinks!</p></div>
+              <div class="comment"><p>I think this post stinks!</p></div>
+              <div class="comment"><p>I think this post stinks!</p></div>
+            </div>
+            
+        </div>
+
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+
+  <script src="/js/logout.js"></script>
+
+</body>
+
+</html>

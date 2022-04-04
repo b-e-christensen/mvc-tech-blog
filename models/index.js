@@ -1,6 +1,7 @@
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
+const CommentBoard = require('./CommentBoard');
 
 
 User.hasMany(Post, {
@@ -11,25 +12,16 @@ User.hasMany(Post, {
 Post.belongsTo(User, {
     foreignKey: 'user_id'
 })
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
+Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+})
 
-Post.belongsToMany(User, { through: Comment })
-User.belongsToMany(Post, { through: Comment })
-// User.hasMany(Comment, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// })
+Post.belongsToMany(Comment, { through: CommentBoard})
 
-// Comment.belongsTo(User, {
-//     foreignKey: 'user_id'
-// })
+Comment.belongsToMany(Post, { through: CommentBoard })
 
-// Post.hasMany(Comment, {
-//     foreignKey: 'post_id',
-//     onDelete: 'CASCADE'
-// })
-
-// Comment.belongsTo(Post, {
-//     foreignKey: 'post_id'
-// })
-
-module.exports = { User, Post, Comment };
+module.exports = { User, Post, Comment, CommentBoard };

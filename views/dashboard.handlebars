@@ -1,8 +1,12 @@
     
     {{#each posts as |post|}}
     <div class="post-container">
-        <div id="post-title" class="post-title display-flex justify-center">{{post.title}} posted by {{post.user.name}}</div>
-        <div id="post-body" class="post-body col-12">{{post.content}}</div>
-        {{!-- <div id="comment"></div> --}}
+        <div id="post-title" class="post-title display-flex justify-center"><h5><strong>{{post.title}}</strong> posted by {{post.user.name}}</h5></div>
+        <div id="post-content" class="post-body col-12"><p>{{post.content}}</p></div>
+    <div id="comments"><h5>Comments:</h5>
+    {{#each post.comments as |comment|}}
+    <div class="comment"><p>{{comment.content}}</p></div>
+    {{/each}}
+    </div>
     </div>
     {{/each}}

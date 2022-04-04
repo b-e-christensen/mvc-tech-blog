@@ -13,14 +13,29 @@ router.get('/', async (req, res) => {
       // })
 
       const posts = postData.map((post) => post.get({ plain: true }));
-      console.log(posts)
+      
+      // res.status(200).json(postData)
 
       // const comments = commentData.map((comment) => comment.get({ plain: true }));
       // console.log(comments)
-
+      console.log(posts[0].comments[0].content);
       res.render('dashboard', {
         posts
       })
+
+    } catch (err) {
+      console.log(err)
+      res.status(500).json(err);
+    }
+  });
+
+  router.get('/posts', async (req, res) => {
+    try {
+      const postData = await Post.findAll({
+        include: [{ model: User }, { model: Comment}]
+      })
+
+      res.status(200).json(postData[0])
 
     } catch (err) {
       console.log(err)
