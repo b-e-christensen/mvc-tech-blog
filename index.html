@@ -10,43 +10,26 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Post Central</a> 
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-<!-- 
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-
-        <a href="/login">login</a> -->
-
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-        <div class="post-container">
-            <div id="post-title" class="post-title display-flex justify-center"><h5><strong>Post Title</strong> posted by User Name</h5></div>
-            <div id="post-content" class="post-body col-12"><p>This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! This is where the post content goes!!!! </p></div>
-            <div id="comments"> <h5>Comments:</h5>
-              <div class="comment"><p>I think this post stinks!</p></div>
-              <div class="comment"><p>I think this post stinks!</p></div>
-              <div class="comment"><p>I think this post stinks!</p></div>
-              <div class="comment"><p>I think this post stinks!</p></div>
-            </div>
-            
-        </div>
-
-    </main>
-    <footer>
-      
-    </footer>
+  <header>
+    <nav>
+      <a href="/dashboard">dashboard</a>
+      <a href="/dashboard" id="logout">logout</a>
+    </nav>
+  </header>
+  <div class="user-posts-div">
+<!-- #each posts as |post| -->
+<!-- make a fetch request to /edit to acquire post/user info. -->
+    <div class="col-4 user-posts"><a href="/edit"><h5>Best Post Ever!</h5></a>
+    </div>
+    <!-- /each -->
+  </div>
+  <!-- /new-post will be the same as edit, except edit will take the existing post content and insert it into the textareas -->
+  <div>
+    <a href="/new-post"><button id="new-post">New Post</button></a>
   </div>
 
-  <!-- Render script for logged in users only -->
-
-  <script src="/js/logout.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/logout.js"></script>
 
 </body>
 
