@@ -1,4 +1,16 @@
+  <div class="user-posts-div">
+<!-- #each posts as |post| -->
+{{#each posts as |post|}}
+<!-- make a fetch request to /edit to acquire post/user info. -->
+    <div class="col-4 user-posts"><a href="/edit/{{post.id}}" id="edit-anchor" value="{{post.id}}"><h5>{{post.title}}</h5></a>
+    </div>
+{{/each}}
+  </div>
+  <!-- /new-post will be the same as edit, except edit will take the existing post content and insert it into the textareas -->
+  <div>
+    <a href="/new-post"><button id="new-post">New Post</button></a>
+  </div>
 
-
-
-<script src="./js/profile.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/logout.js"></script>
+  <script src="./js/edit.js"></script>

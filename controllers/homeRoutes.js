@@ -64,10 +64,11 @@ router.get('/project/:id', async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: Project }],
+        include: [{ model: Post }],
       });
   
       const user = userData.get({ plain: true });
+      console.log(user)
   
       res.render('profile', {
         ...user,
@@ -77,6 +78,19 @@ router.get('/project/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get('/edit/:id', async (req, res) => {
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    const post = postData.get({ plain: true });
+    res.render('edit', {
+      post
+    })
+  })
   
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -87,5 +101,6 @@ router.get('/project/:id', async (req, res) => {
   
     res.render('login');
   });
+  
   
   module.exports = router;

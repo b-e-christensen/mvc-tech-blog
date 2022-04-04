@@ -54,3 +54,22 @@ nav {
     justify-content: space-between;
     margin: 10px;
 }
+
+#nav-profile {
+    margin: 10px
+}
+
+
+#edit-div {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#edit-button {
+    width: fit-content;
+}
+
+textarea {
+    margin: 10px;
+}

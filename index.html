@@ -10,27 +10,49 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="/dashboard">dashboard</a>
-      <a href="/dashboard" id="logout">logout</a>
-    </nav>
-  </header>
-  <div class="user-posts-div">
-<!-- #each posts as |post| -->
-<!-- make a fetch request to /edit to acquire post/user info. -->
-    <div class="col-4 user-posts"><a href="/edit"><h5>Best Post Ever!</h5></a>
+  
+  <div class="row">
+    <div class="col-md-6">
+  
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login">Title:</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">Body:</label>
+          <input class="form-input" type="text" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">login</button>
+        </div>
+      </form>
     </div>
-    <!-- /each -->
+    <div class="col-md-6">
+      <h2>Signup</h2>
+  
+      <form class="form signup-form">
+        <div class="form-group">
+          <label for="name-signup">name:</label>
+          <input class="form-input" type="text" id="name-signup" />
+        </div>
+        <div class="form-group">
+          <label for="email-signup">email:</label>
+          <input class="form-input" type="text" id="email-signup" />
+        </div>
+        <div class="form-group">
+          <label for="password-signup">password:</label>
+          <input class="form-input" type="password" id="password-signup" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">signup</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <!-- /new-post will be the same as edit, except edit will take the existing post content and insert it into the textareas -->
-  <div>
-    <a href="/new-post"><button id="new-post">New Post</button></a>
-  </div>
-
-  <script src="./js/profile.js"></script>
-  <script src="./js/logout.js"></script>
-
+  
+  <script src="./js/login.js"></script>
+  
 </body>
 
 </html>
