@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
       // console.log(comments)
       console.log(posts[0].comments[0].content);
       res.render('dashboard', {
-        posts
+        posts,
+        logged_in: req.session.logged_in 
       })
 
     } catch (err) {

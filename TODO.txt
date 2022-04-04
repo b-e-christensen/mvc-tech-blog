@@ -1,0 +1,5 @@
+Things that are left to do (well probably a good bit more than this, but things that will get me a passing grade) ---
+
+Make a button to be able to leave a comment on a post (would just take you to a new handlebars page)
+
+Make a button to create a new post (would be a new handlebars page with forms. One for title, one for content.)
