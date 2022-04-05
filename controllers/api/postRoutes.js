@@ -2,15 +2,6 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 
 // -----> /api/posts
-router.get('/:id', (req, res) => {
-    try {
-        console.log('mega put route reached')
-    } catch (error) {
-        console.log(error)
-    }
-    
-})
-
 
 router.put('/:id', async (req, res) => {
     try {
@@ -33,5 +24,19 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 }) 
+
+router.post('/', async (req, res) => {
+    try {
+        const postData = await Post.create({
+            title: req.body.title,
+            content: req.body.content,
+            user_id: req.session.user_id
+        })
+        res.status(200).json(postData)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
     
 module.exports = router

@@ -1,17 +1,6 @@
 // grab post-title and post-content elements. 
 // use them as the data to send to the database 
 
-const renderEditor = async () => {
-    const anchorTag = document.getElementById('edit-anchor')
-    const post_id = anchorTag.getAttribute("value")
-
-    const edit = await fetch (`/edit/${post_id}`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    })
-
-}
-
 const editPost = async () => {
 
 const title = document.getElementById('post-title').value
@@ -36,5 +25,5 @@ const response = await fetch('/api/posts/' + post_id, {
 
 // document.getElementById('edit-anchor').addEventListener('click', renderEditor)
 document
-    .querySelector('#edit-button')
+    .querySelector('#edit-post')
     .addEventListener('click', editPost)
