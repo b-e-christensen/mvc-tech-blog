@@ -73,3 +73,9 @@ nav {
 textarea {
     margin: 10px;
 }
+
+#comment-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

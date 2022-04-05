@@ -1,12 +1,20 @@
     
-    {{#each posts as |post|}}
+{{#each posts as |post|}}
     <div class="post-container">
         <div id="post-title" class="post-title display-flex justify-center"><h5><strong>{{post.title}}</strong> posted by {{post.user.name}}</h5></div>
         <div id="post-content" class="post-body col-12"><p>{{post.content}}</p></div>
-    <div id="comments"><h5>Comments:</h5>
-    {{#each post.comments as |comment|}}
-    <div class="comment"><p>{{comment.content}}</p></div>
-    {{/each}}
+        {{#if post.comments}}
+            <div id="comments"><h5>Comments:</h5>
+            {{#each post.comments as |comment|}}
+            <div class="comment"><p>{{comment.content}}</p><h6></h6></div>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div id="comment-div">
+            <textarea name="comment" id="comment-textarea" cols="40" rows="2" value="{{post.id}}" placeholder="Leave a comment"></textarea>
+        <button class="no-button comment-button">Add a comment</button>
+        </div>
     </div>
-    </div>
-    {{/each}}
+{{/each}}
+
+<script src="/js/comment.js"></script>
