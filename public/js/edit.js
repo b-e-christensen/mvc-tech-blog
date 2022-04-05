@@ -1,6 +1,3 @@
-// grab post-title and post-content elements. 
-// use them as the data to send to the database 
-
 const editPost = async () => {
 
 const title = document.getElementById('post-title').value
@@ -22,6 +19,29 @@ const response = await fetch('/api/posts/' + post_id, {
       }  
 }
 
+const deletePost = async () => {
+  const url = document.URL;
+  const post_id = url.substring(url.lastIndexOf('/') + 1);
+
+  const response = await fetch('/api/posts/' + post_id, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  })
+  if (response.ok) {
+    // If successful, redirect the browser to the profile page
+    document.location.replace('/profile');
+  } else {
+    alert(response.statusText);
+  }  
+}
+
+const deleteComment = async () => {
+  
+}
+
+document
+  .getElementById('delete-post')
+  .addEventListener('click', deletePost)
 
 // document.getElementById('edit-anchor').addEventListener('click', renderEditor)
 document

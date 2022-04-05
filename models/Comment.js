@@ -15,7 +15,14 @@ Comment.init(
             type: DataTypes.STRING, 
             allowNull: false
         },
-        // need relation id's here (posts and users.)
+        date_created: { 
+            type: DataTypes.DATEONLY, 
+            defaultValue: DataTypes.NOW 
+        },
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

@@ -1,0 +1,17 @@
+ <div class="post-container">
+       <div id="post-title" class="post-title display-flex justify-center"><h5><strong>{{post.title}}</strong> posted by {{post.user.name}}</h5></div>
+        <div id="post-content" class="post-body col-12"><p>{{post.content}}</p></div>
+        {{#if post.comments}}
+            <div id="comments"><h5>Comments:</h5>
+            {{#each post.comments as |comment|}}
+            <div class="comment"><p>{{comment.content}}</p><p><i>comment by {{comment.user_name}} on {{comment.date_created}}</i></p></div>
+            {{/each}}
+            </div>
+        {{/if}}
+        <div id="comment-div">
+            <textarea name="comment" id="comment-textarea" cols="40" rows="2" value="{{post.id}}" placeholder="Leave a comment"></textarea>
+        <button class="no-button" id="comment-button">Add a comment</button>
+        </div>
+    </div>
+
+    <script src="/js/comment.js"></script>
