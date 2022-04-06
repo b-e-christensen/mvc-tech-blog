@@ -22,20 +22,6 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/posts', async (req, res) => {
-    try {
-      const postData = await Post.findAll({
-        include: [{ model: User }, { model: Comment}],
-      })
-
-      res.status(200).json(postData)
-
-    } catch (err) {
-      console.log(err)
-      res.status(500).json(err);
-    }
-  });
-
   // Use withAuth middleware to prevent access to route
   router.get('/profile', withAuth, async (req, res) => {
     try {
@@ -56,7 +42,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/edit/:id', async (req, res) => {
+  router.get('/edit/:id', withAuth, async (req, res) => {
     const postData = await Post.findOne({
       where: {
         id: req.params.id

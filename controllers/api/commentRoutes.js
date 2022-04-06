@@ -44,7 +44,7 @@ router.get('/delete/:id', async (req, res) => {
     }
   });
 
-  router.delete('/delete/:id', async (req, res) => {
+  router.delete('/delete/:id', withAuth, async (req, res) => {
     try {
       const deletedComment = await Comment.destroy({
         where: {
@@ -61,7 +61,7 @@ router.get('/delete/:id', async (req, res) => {
     }
   })
 
-  router.post('/', async (req, res) => {
+  router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             content: req.body.content,
